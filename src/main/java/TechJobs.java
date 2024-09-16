@@ -120,16 +120,22 @@ public class TechJobs {
 
         //logic - should check for search terms (case-insensitive) and print valid results
         if (!someJobs.isEmpty()) {
-            System.out.print("\n");
-            for (HashMap<String, String> job : someJobs) {
-                System.out.println("*****");
+            int i = 0;
 
+            System.out.print("\n");
+
+            for (HashMap<String, String> job : someJobs) {
+                i++;
+
+                System.out.println("*****");
                 for (Map.Entry<String, String> field : job.entrySet()) {
                     System.out.println(field.getKey() + ": " + field.getValue());
                 }
+                System.out.println("*****");
 
-                System.out.println("*****\n");
-
+                if (i < someJobs.size()) {
+                    System.out.println();
+                }
             }
         } else System.out.print("No Results");
     }
